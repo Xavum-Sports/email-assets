@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Xavum email signatures</title>
+<style>
+body{margin:0;background:#fff;color:#0a0b0c;font-family:Arial,Helvetica,sans-serif;line-height:1.5}
+main{max-width:640px;margin:0 auto;padding:32px 16px 48px}
+h1{font-size:22px;margin:0 0 8px}
+ol{margin:0 0 28px;padding-left:20px;color:#444;font-size:14px}
+section{border-top:1px solid #ddd;padding:20px 0}
+h2{font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:#777;margin:0 0 12px}
+.sig{overflow-x:auto;padding:4px 0 14px}
+button{font:600 13px Arial,sans-serif;padding:8px 14px;border:1px solid #0a0b0c;background:#0a0b0c;color:#fff;border-radius:4px;cursor:pointer}
+</style></head><body><main>
+<h1>Xavum email signatures</h1>
+<ol>
+<li>Click <b>Copy signature</b> under your name.</li>
+<li>In Gmail, open Settings, then See all settings, then the General tab, and scroll to Signature.</li>
+<li>Click Create new, name it Xavum, and paste into the box.</li>
+<li>Pick it under Signature defaults for new emails and replies, then click Save Changes at the bottom.</li>
+</ol>
+<section><h2>Cameron</h2><div class="sig" id="cameron"><table cellpadding="0" cellspacing="0" border="0" style="border-collapse:collapse"><tr><td style="padding:0 14px 0 0;vertical-align:middle"><img src="https://raw.githubusercontent.com/Xavum-Sports/email-assets/main/signature/xavum-logo.gif" width="236" height="76" alt="Xavum Sports" style="display:block;border:0"></td><td style="padding:2px 0 2px 16px;border-left:1px solid #b5b5b5;vertical-align:middle;font-family:'Helvetica Neue',Helvetica,Arial,sans-serif"><div style="font-size:15px;font-weight:600;line-height:21px;letter-spacing:-.005em;color:#0a0b0c">Cameron Black</div><div style="font-size:12px;line-height:18px;color:#555555">CEO and Co-Founder</div></td></tr></table>
+</div><button onclick="copySig('cameron',this)">Copy signature</button></section><section><h2>Damien</h2><div class="sig" id="damien"><table cellpadding="0" cellspacing="0" border="0" style="border-collapse:collapse"><tr><td style="padding:0 14px 0 0;vertical-align:middle"><img src="https://raw.githubusercontent.com/Xavum-Sports/email-assets/main/signature/xavum-logo.gif" width="236" height="76" alt="Xavum Sports" style="display:block;border:0"></td><td style="padding:2px 0 2px 16px;border-left:1px solid #b5b5b5;vertical-align:middle;font-family:'Helvetica Neue',Helvetica,Arial,sans-serif"><div style="font-size:15px;font-weight:600;line-height:21px;letter-spacing:-.005em;color:#0a0b0c">Damien Hawes</div><div style="font-size:12px;line-height:18px;color:#555555">Co-Founder</div></td></tr></table>
+</div><button onclick="copySig('damien',this)">Copy signature</button></section><section><h2>Marinto</h2><div class="sig" id="marinto"><table cellpadding="0" cellspacing="0" border="0" style="border-collapse:collapse"><tr><td style="padding:0 14px 0 0;vertical-align:middle"><img src="https://raw.githubusercontent.com/Xavum-Sports/email-assets/main/signature/xavum-logo.gif" width="236" height="76" alt="Xavum Sports" style="display:block;border:0"></td><td style="padding:2px 0 2px 16px;border-left:1px solid #b5b5b5;vertical-align:middle;font-family:'Helvetica Neue',Helvetica,Arial,sans-serif"><div style="font-size:15px;font-weight:600;line-height:21px;letter-spacing:-.005em;color:#0a0b0c">Marinto Richee James</div><div style="font-size:12px;line-height:18px;color:#555555">Head of Engineering</div></td></tr></table>
+</div><button onclick="copySig('marinto',this)">Copy signature</button></section><section><h2>Rick</h2><div class="sig" id="rick"><table cellpadding="0" cellspacing="0" border="0" style="border-collapse:collapse"><tr><td style="padding:0 14px 0 0;vertical-align:middle"><img src="https://raw.githubusercontent.com/Xavum-Sports/email-assets/main/signature/xavum-logo.gif" width="236" height="76" alt="Xavum Sports" style="display:block;border:0"></td><td style="padding:2px 0 2px 16px;border-left:1px solid #b5b5b5;vertical-align:middle;font-family:'Helvetica Neue',Helvetica,Arial,sans-serif"><div style="font-size:15px;font-weight:600;line-height:21px;letter-spacing:-.005em;color:#0a0b0c">Rick Pearce</div><div style="font-size:12px;line-height:18px;color:#555555">COO</div></td></tr></table>
+</div><button onclick="copySig('rick',this)">Copy signature</button></section>
+</main>
+<script>
+async function copySig(id,btn){
+  const el=document.getElementById(id);
+  try{
+    await navigator.clipboard.write([new ClipboardItem({'text/html':new Blob([el.innerHTML],{type:'text/html'}),'text/plain':new Blob([el.innerText],{type:'text/plain'})})]);
+  }catch(e){
+    const r=document.createRange();r.selectNodeContents(el);const s=getSelection();s.removeAllRanges();s.addRange(r);document.execCommand('copy');s.removeAllRanges();
+  }
+  const t=btn.textContent;btn.textContent='Copied';setTimeout(()=>btn.textContent=t,1500);
+}
+</script></body></html>
